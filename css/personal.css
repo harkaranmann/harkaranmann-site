@@ -1,0 +1,49 @@
+/* Page-specific additions; all tokens come from style.css (shared with mannscan.in) */
+.proj { display: flex; flex-direction: column; padding: 22px 22px 28px; }
+.proj h3 { font-size: 1.4rem; margin: 22px 8px 10px; }
+.proj p { margin: 0 8px 16px; font-size: 1rem; }
+.proj .svc-card__link { margin: auto 8px 0; }
+.shot { display: block; aspect-ratio: 16/10; overflow: hidden; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2); }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.shot--note { display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; text-align: center; padding: 28px; color: var(--text-2); font-size: 14.5px; }
+.shot--note svg { width: 40px; height: 40px; color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 8px 18px; }
+.tags span { font-size: 12.5px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 12px; border-radius: 999px; }
+.reel-shot { margin: 0; padding: 14px; }
+.reel-shot img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: var(--radius-sm); display: block; }
+.reel-shot figcaption { padding: 14px 6px 4px; font-weight: 600; text-align: center; }
+.disclaimer { text-align: center; color: var(--text-3); font-size: 14px; margin: 34px 0 0; }
+.logo-panel { display: flex; align-items: center; justify-content: center; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 48px; min-height: 280px; }
+.logo-panel img { max-height: 200px; width: auto; }
+@media (max-width: 760px) { .reel-shot img { aspect-ratio: 9/14; } }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 100; background: var(--accent); color: var(--on-accent); padding: 10px 16px; border-radius: 10px; }
+.skip:focus { left: 12px; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 0 0 32px; }
+.chip { min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--text-2); font: 600 14px var(--font-sans); cursor: pointer; transition: all .25s ease; }
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip:focus-visible, .skip:focus-visible, .shot:focus-visible, a:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+.proj[hidden] { display: none; }
+.proj .shot { transition: transform .4s var(--ease); }
+.proj:hover .shot { transform: scale(1.01); }
+.sound-btn { display: none !important; }
+.sub { font-size: 1.5rem; margin: 52px 0 22px; }
+.sub:first-of-type { margin-top: 0; }
+.cover { margin: 0; padding: 14px; }
+.cover img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: var(--radius-sm); display: block; }
+.cover figcaption { padding: 14px 6px 4px; font-weight: 600; text-align: center; line-height: 1.35; }
+.cover small { display: block; font-weight: 500; font-size: 13px; color: var(--text-3); margin-top: 4px; }
+.wide { margin: 0; padding: 14px; }
+.wide img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius-sm); display: block; }
+.note { text-align: center; color: var(--text-2); margin: 24px 0 0; }
+.cover figcaption .svc-card__link { margin-top: 10px; font-size: 13.5px; }
+.books { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.soon { border-style: dashed; }
+.soon__art { aspect-ratio: 2/3; border-radius: var(--radius-sm); border: 1px solid var(--line); background: radial-gradient(120% 80% at 30% 0%, var(--accent-soft), transparent 60%), var(--surface-2); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 10px; padding: 18px; }
+.soon__art span { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.soon__art b { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.2; }
+.soon__art i { font-style: normal; font-size: 13px; color: var(--text-3); }
+.note a { color: var(--accent); }
+.books { grid-template-columns: repeat(5, 1fr); gap: 18px; }
+@media (max-width: 1100px) { .books { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .books { grid-template-columns: repeat(2, 1fr); } }

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dr. Harkaran Singh Mann | Radiologist &amp; Healthcare-AI Builder</title>
+  <meta name="description" content="Dr. Harkaran Singh Mann, consultant radiologist at Mann Scanning Centre, Jalandhar, builds clinical AI software: FibroAI, radiology reporting, foetal medicine, DICOM viewing and health-education video." />
+  <link rel="canonical" href="https://harkaranmann.mannscan.in/" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/personal.css" />
+  <script src="js/site.js"></script>
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="https://mannscan.in/" style="text-decoration:none">
+        <img src="images/logo.png" alt="Mann Scanning Centre logo" />
+        <span class="brand-name">Dr. Harkaran Mann<small>Radiologist &middot; Builder</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#projects" class="active">Projects</a>
+        <a href="#reels">Reels</a>
+        <a href="#creative">Creative</a>
+        <a href="#about">About</a>
+        <a href="#consulting">Consultancy</a>
+        <a href="#contact">Contact</a>
+        <a href="https://mannscan.in/">Mann Scanning Centre</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-sun" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--primary nav-cta">Get in touch</a>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero__bg"></div>
+    <div class="container page-hero__inner reveal visible">
+      <span class="eyebrow eyebrow--center">Consultant radiologist &middot; Jalandhar, Punjab</span>
+      <h1>Medicine, <span class="chrome">engineered.</span></h1>
+      <p>I read scans for a living and build the software I wish I had at the reporting desk: elastography AI, voice-first reporting, foetal biometry, DICOM viewing and health-education video.</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:30px;">
+        <a href="#projects" class="btn btn--primary">See the projects</a>
+        <a href="https://mannscan.in/" class="btn btn--ghost">Mann Scanning Centre</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center">Projects</span>
+        <h2 class="section__title">What I have built</h2>
+        <p class="section__intro">Real screens from the running software. Anything touching patients stays behind a login, so no patient data appears here.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip is-on" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" data-f="clinical" aria-pressed="false">Clinical AI</button>
+        <button class="chip" data-f="imaging" aria-pressed="false">Imaging</button>
+        <button class="chip" data-f="video" aria-pressed="false">Video &amp; tools</button>
+      </div>
+
+      <div class="grid grid--2" id="projGrid">
+        <article class="card card--hover proj reveal" data-cat="clinical">
+          <a class="shot" href="https://fibroai.com" target="_blank" rel="noopener"><img width="1200" height="750" src="shots/fibroai.webp" alt="FibroAI landing page" loading="lazy" /></a>
+          <h3>FibroAI</h3>
+          <p>AI-assisted elastography reporting in 10 languages. Structured PDF reports with clinician-led review. Live in production.</p>
+          <div class="tags"><span>FastAPI</span><span>Oracle Cloud</span><span>Groq / NVIDIA / OpenRouter</span></div>
+          <a class="svc-card__link" href="https://fibroai.com" target="_blank" rel="noopener">Visit fibroai.com &rarr;</a>
+        </article>
+
+        <article class="card card--hover proj reveal" data-cat="clinical">
+          <div class="shot"><img width="1200" height="750" src="shots/radiology.webp" alt="Radiology AI Reporting System login screen" loading="lazy" /></div>
+          <h3>Radiology AI Reporting</h3>
+          <p>Voice-first reporting: Whisper dictation into a findings pad, rule-based section mapping, a cloud second opinion and an offline FAISS path for templates. Role-based access.</p>
+          <div class="tags"><span>FastAPI</span><span>Whisper</span><span>FAISS</span><span>Groq</span></div>
+        </article>
+
+        <article class="card card--hover proj reveal" data-cat="imaging">
+          <div class="shot"><img width="1200" height="750" src="shots/foetal.webp" alt="Foetal Medicine report entry screen" loading="lazy" /></div>
+          <h3>Foetal Medicine Reports</h3>
+          <p>Ultrasound biometry entry, INTERGROWTH-21st growth charts, risk assessment, DICOM/machine import and PDF reports.</p>
+          <div class="tags"><span>FastAPI</span><span>DICOM</span><span>INTERGROWTH-21st</span><span>PDF</span></div>
+        </article>
+
+        <article class="card card--hover proj reveal" data-cat="imaging">
+          <div class="shot"><img width="1200" height="750" src="shots/anubis.webp" alt="AnubiS web DICOM viewer showing a synthetic CT phantom" loading="lazy" /></div>
+          <h3>AnubiS DICOM Viewer</h3>
+          <p>Web DICOM viewing for the centre: OHIF / Cornerstone3D with an Orthanc DICOMweb archive, plus a GPU-side AI enhancement worker. Screenshot shows a synthetic phantom; the live archive is staff-only behind Cloudflare Access.</p>
+          <div class="tags"><span>OHIF v3</span><span>Orthanc</span><span>PyTorch / MONAI</span></div>
+          <a class="svc-card__link" href="https://mannscan.in/" target="_blank" rel="noopener">Mann Scanning Centre &rarr;</a>
+        </article>
+
+        <article class="card card--hover proj reveal" data-cat="video">
+          <div class="shot"><img width="1200" height="750" src="shots/trading.webp" alt="Paper trading dashboard" loading="lazy" /></div>
+          <h3>NSE Paper-Trading Dashboard</h3>
+          <p>Risk-first position sizing, stop-loss rules and an opening-range scanner for NSE. <strong>Paper simulation only: no live broker, no real funds, not investment advice.</strong></p>
+          <div class="tags"><span>Python</span><span>Standard library</span><span>Paper only</span></div>
+        </article>
+
+        <article class="card card--hover proj reveal" data-cat="video">
+          <div class="shot"><img width="1200" height="450" src="shots/openmontage.webp" alt="OpenMontage generated cinematic frames" loading="lazy" /></div>
+          <h3>OpenMontage</h3>
+          <p>An agentic video-production system: pipeline definitions, tool adapters and a Remotion composer that turn a brief into a finished video.</p>
+          <div class="tags"><span>Python</span><span>Remotion</span><span>Agents</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="reels">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center">AI digital twin</span>
+        <h2 class="section__title">Health-education reels</h2>
+        <p class="section__intro">A cloned voice, a talking-head pipeline and a Remotion card engine produce evidence-led reels on bone density, blood pressure, coffee and the liver, and more.</p>
+      </div>
+      <div class="grid grid--3">
+        <figure class="card card--hover reel-shot reveal"><img width="540" height="960" src="shots/reel1.webp" alt="Reel: The DEXA scan" loading="lazy" /><figcaption>The DEXA scan</figcaption></figure>
+        <figure class="card card--hover reel-shot reveal"><img width="540" height="960" src="shots/reel2.webp" alt="Reel: bone density" loading="lazy" /><figcaption>Bone density</figcaption></figure>
+        <figure class="card card--hover reel-shot reveal"><img width="540" height="960" src="shots/reel3.webp" alt="Reel: blood pressure and the brain" loading="lazy" /><figcaption>Blood pressure &amp; the brain</figcaption></figure>
+      </div>
+      <p class="disclaimer reveal">General health education, not medical advice. It does not replace an examination or advice from your own doctor.</p>
+    </div>
+  </section>
+
+  <section class="section" id="creative">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center">Beyond medicine</span>
+        <h2 class="section__title">Books, film &amp; children's songs</h2>
+        <p class="section__intro">The creative work I make outside the reporting room, written as Dr H.S. Mann.</p>
+      </div>
+
+      <h3 class="sub reveal">Books</h3>
+      <div class="grid books">
+        <figure class="card card--hover cover reveal"><img width="600" height="900" src="shots/book-andromeda.webp" alt="Andromeda's Last Light, second edition, book cover" loading="lazy" /><figcaption>Andromeda's Last Light<small>Science-fiction novel &middot; 2nd edition</small><a class="svc-card__link" href="https://www.amazon.com/stores/author/B0CCD9XYBL/allbooks" target="_blank" rel="noopener">Amazon author page &rarr;</a></figcaption></figure>
+        <figure class="card card--hover cover reveal"><img width="600" height="900" src="shots/book-exile.webp" alt="Exile of the Katani and Other Tales from Mossania, book cover" loading="lazy" /><figcaption>Exile of the Katani<small>And Other Tales from Mossania</small><a class="svc-card__link" href="https://www.amazon.com/dp/B0CJ49NKCL" target="_blank" rel="noopener">View on Amazon &rarr;</a></figcaption></figure>
+        <figure class="card card--hover cover reveal"><img width="600" height="900" src="shots/book-halloween.webp" alt="Squeakey and Owiee: The Halloween Haunt, children's book cover" loading="lazy" /><figcaption>Squeakey and Owiee<small>The Halloween Haunt &middot; children's</small><a class="svc-card__link" href="https://www.amazon.com/dp/173804243X" target="_blank" rel="noopener">View on Amazon &rarr;</a></figcaption></figure>
+        <figure class="card card--hover cover reveal"><img width="600" height="960" src="shots/book-salty.webp" alt="The Chef's Daughters: Lovely and Salty, book cover" loading="lazy" /><figcaption>The Chef's Daughters: Lovely and Salty<small>Illustrated children's book &middot; 2nd edition</small><a class="svc-card__link" href="https://www.amazon.ca/dp/B0CGKYH9T2" target="_blank" rel="noopener">View on Amazon &rarr;</a></figcaption></figure>
+        <figure class="card cover soon reveal"><div class="soon__art" role="img" aria-label="Upcoming novel, cover to be announced"><span>Coming soon</span><b>The World We Promised to Remember</b><i>A Harnaki love story</i></div><figcaption>Upcoming novel<small>In development &middot; no release date</small></figcaption></figure>
+      </div>
+
+            <p class="note reveal">All titles: <a href="https://www.amazon.com/stores/author/B0CCD9XYBL/allbooks" target="_blank" rel="noopener">Amazon author page</a> &middot; <a href="https://www.goodreads.com/author/show/44021193.Dr_H_S_Mann" target="_blank" rel="noopener">Goodreads</a>. Also by Dr H.S. Mann: <a href="https://www.amazon.com/dp/1738042413" target="_blank" rel="noopener">CVC Critters</a>, <a href="https://www.amazon.com/dp/1738042421" target="_blank" rel="noopener">Furry Phonics Fun</a>, <a href="https://www.amazon.in/dp/B0CCD4RLCM" target="_blank" rel="noopener">Squeakey and Owiee: Guardians of the Forest</a>. Second editions of Andromeda's Last Light and The Chef's Daughters are in production; links point to the current editions.</p>
+
+      <h3 class="sub reveal">Lovely &amp; Salty, the film</h3>
+      <div class="grid grid--2">
+        <figure class="card card--hover wide reveal"><img width="1200" height="675" src="shots/film1.webp" alt="Lovely and Salty film title card, Chapter One: The Naming of Lovely" loading="lazy" /></figure>
+        <figure class="card card--hover wide reveal"><img width="1200" height="675" src="shots/film2.webp" alt="Still from the Lovely and Salty film: the two sisters reading a recipe book in the kitchen" loading="lazy" /></figure>
+      </div>
+      <p class="note reveal">A chapter-by-chapter AI-assisted animated adaptation of the story, finished with upscaling, titles and a sound pass. Not released yet: watch links will appear here.</p>
+
+      <h3 class="sub reveal">DreamDoor Kids</h3>
+      <div class="grid grid--3">
+        <figure class="card card--hover reel-shot reveal"><img width="540" height="960" src="shots/dd-9-planets.webp" alt="DreamDoor Kids short: 9 planets song" loading="lazy" /><figcaption>9 Planets</figcaption></figure>
+        <figure class="card card--hover reel-shot reveal"><img width="540" height="960" src="shots/dd-happy-farm-song.webp" alt="DreamDoor Kids short: Happy Farm song" loading="lazy" /><figcaption>Happy Farm Song</figcaption></figure>
+        <figure class="card card--hover reel-shot reveal"><img width="540" height="960" src="shots/dd-dino-days.webp" alt="DreamDoor Kids short: Dino Days" loading="lazy" /><figcaption>Dino Days</figcaption></figure>
+      </div>
+      <p class="note reveal">Original kids' songs set to animated shorts, from planets to farms to sleepy dinosaurs. Public watch links will be added here.</p>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="about">
+    <div class="container grid grid--2" style="align-items:center; gap:52px;">
+      <div class="reveal">
+        <span class="eyebrow">About</span>
+        <h2 class="section__title">A radiologist who ships code</h2>
+        <p>I am a consultant radiologist (M.D. Radiodiagnosis) at <a href="https://mannscan.in/">Mann Scanning Centre</a>, an NABH-accredited imaging centre in Jalandhar. The tools above start as friction at the reporting desk and end up as software others can use.</p>
+        <p><a class="svc-card__link" href="https://mannscan.in/about.html">Meet the team at Mann Scanning Centre &rarr;</a></p>
+      </div>
+      <div class="reveal logo-panel"><img src="images/logo.png" alt="Mann Scanning Centre" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="section" id="consulting">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center">Consultancy</span>
+        <h2 class="section__title">Consult with Dr. Harkaran Mann</h2>
+        <p class="section__intro">Private advisory sessions, by telephone or online, for healthcare organisations, founders and technology teams. Engagements are scoped to your requirement and arranged by email.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card reveal"><h3>Healthcare AI &amp; software</h3><p>Architecture and product guidance for clinical tools, reporting workflows, DICOM and PACS integration, and the selection of AI systems for diagnostic practice.</p></div>
+        <div class="card reveal"><h3>Imaging-centre strategy</h3><p>Technology, workflow and accreditation decisions for establishing and operating a diagnostic centre, advised from an owner-operator's perspective.</p></div>
+        <div class="card reveal"><h3>Health content &amp; AI media</h3><p>Evidence-led content strategy and AI-assisted video production for clinicians and healthcare brands.</p></div>
+      </div>
+      <p class="disclaimer reveal">Advisory services are non-clinical. No diagnosis, treatment advice or second opinions on patients or scans.</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:26px;">
+        <a class="btn btn--primary" href="mailto:harkaran@msn.com?subject=Consultancy%20enquiry&body=Name%3A%0AOrganisation%3A%0ABrief%20description%20of%20your%20requirement%3A%0APreferred%20format%20(phone%20or%20online)%3A">Request a consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center">Contact</span>
+        <h2 class="section__title">Let's build something</h2>
+        <p class="section__intro">For collaborations and projects. For scans and appointments, please use the centre's site.</p>
+      </div>
+      <div class="hero__actions" style="justify-content:center;">
+        <a class="btn btn--primary" href="mailto:harkaran@msn.com">harkaran@msn.com</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/harkaranmann/" target="_blank" rel="noopener">Instagram @harkaranmann</a>
+        <a class="btn btn--ghost" href="https://mannscan.in/contact.html">Book a scan</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dr. Harkaran Singh Mann &middot; <a href="https://mannscan.in/">Mann Scanning Centre, Jalandhar</a></p>
+        <p>Software shown is not a substitute for clinical judgement.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+  (function(){var b=document.querySelectorAll('.chip'),c=document.querySelectorAll('#projGrid .proj');
+  b.forEach(function(x){x.addEventListener('click',function(){var f=x.dataset.f;
+  b.forEach(function(y){var on=y===x;y.classList.toggle('is-on',on);y.setAttribute('aria-pressed',on)});
+  c.forEach(function(a){a.hidden=!(f==='all'||a.dataset.cat===f)})})})})();
+  </script>
+</body>
+</html>
