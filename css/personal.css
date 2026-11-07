@@ -47,3 +47,11 @@
 .books { grid-template-columns: repeat(5, 1fr); gap: 18px; }
 @media (max-width: 1100px) { .books { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px) { .books { grid-template-columns: repeat(2, 1fr); } }
+.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr 1fr; gap: 34px; align-items: center; }
+.feature .shot { aspect-ratio: auto; }
+.feature .shot img { height: auto; object-fit: contain; background: #0b0b0d; }
+.feature__body h3 { margin: 0 0 12px; }
+.feature__body p { margin: 0 0 14px; }
+.feature__body .tags { margin: 0 0 14px; }
+.fine { font-size: 13px !important; color: var(--text-3); }
+@media (max-width: 900px) { .feature { grid-template-columns: 1fr; gap: 18px; } }

@@ -50,7 +50,7 @@
     <div class="container page-hero__inner reveal visible">
       <span class="eyebrow eyebrow--center">Consultant radiologist &middot; Jalandhar, Punjab</span>
       <h1>Medicine, <span class="chrome">engineered.</span></h1>
-      <p>I read scans for a living and build the software I wish I had at the reporting desk: elastography AI, voice-first reporting, foetal biometry, DICOM viewing and health-education video.</p>
+      <p>I read scans for a living and build the software I wish I had at the reporting desk: elastography AI, voice-first reporting, foetal biometry, DICOM viewing, MRI denoising and health-education video.</p>
       <div class="hero__actions" style="justify-content:center; margin-top:30px;">
         <a href="#projects" class="btn btn--primary">See the projects</a>
         <a href="https://mannscan.in/" class="btn btn--ghost">Mann Scanning Centre</a>
@@ -74,6 +74,17 @@
       </div>
 
       <div class="grid grid--2" id="projGrid">
+        <article class="card card--hover proj feature reveal" data-cat="imaging">
+          <div class="shot"><img width="1400" height="538" src="shots/denoise.webp" alt="MRI denoising: noisy synthetic phantom, denoised result and the noise removed" loading="lazy" /></div>
+          <div class="feature__body">
+            <h3>AnubiS AI Denoise</h3>
+            <p>MRI denoising and 2x in-plane interpolation that runs inside the PACS workflow. Tag a study in the archive and the worker returns a new, clearly labelled derived series. Originals are never modified, and a quality gate (SSIM, edge preservation) blocks any result that fails.</p>
+            <p>Chosen after an in-house evaluation on 18 real MR series: quality gate passed 18 of 18, median SNR gain +8.8 dB, SSIM 0.99, with no blur or grid artefacts. It beat the 3D U-Net it replaced.</p>
+            <div class="tags"><span>Python</span><span>PyTorch / MONAI</span><span>Non-local means</span><span>Orthanc</span></div>
+            <p class="fine">Demo shows a synthetic phantom, no patient data. Outputs are marked not for diagnosis.</p>
+          </div>
+        </article>
+
         <article class="card card--hover proj reveal" data-cat="clinical">
           <a class="shot" href="https://fibroai.com" target="_blank" rel="noopener"><img width="1200" height="750" src="shots/fibroai.webp" alt="FibroAI landing page" loading="lazy" /></a>
           <h3>FibroAI</h3>
