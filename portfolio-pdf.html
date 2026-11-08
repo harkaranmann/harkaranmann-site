@@ -39,7 +39,7 @@
 
   @page {
     size: A4;
-    margin: 20mm 16mm 22mm 16mm;
+    margin: 14mm 14mm 16mm 14mm;
     @bottom-left {
       content: "Dr. Harkaran Singh Mann — M.D. Radiodiagnosis · MBBS";
       font-family: var(--font-sans);
@@ -64,8 +64,8 @@
     background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    line-height: 1.6;
-    font-size: 10px;
+    line-height: 1.5;
+    font-size: 9.5px;
     padding: 0;
     max-width: 100%;
     margin: 0 auto;
@@ -79,7 +79,7 @@
   .avoid-break { page-break-inside: avoid; }
 
   @media print {
-    body { background: #ffffff; color: #000000; font-size: 9.5px; }
+    body { background: #ffffff; color: #000000; font-size: 8.5px; line-height: 1.4; }
     a { color: #000000; text-decoration: none; }
     .header-band { background: #0F172A !important; color: #F8FAFC !important; -webkit-print-color-adjust: exact; }
     .header-left .credentials { color: #22D3EE !important; -webkit-print-color-adjust: exact; }
@@ -118,69 +118,69 @@
     background: linear-gradient(135deg, var(--color-background) 0%, #1E293B 100%);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 26px 30px;
-    margin-bottom: 20px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
     color: var(--color-foreground);
   }
 
-  .header-grid { display: grid; grid-template-columns: 1fr 80px; gap: 24px; align-items: flex-start; }
+  .header-grid { display: grid; grid-template-columns: 1fr 80px; gap: 18px; align-items: flex-start; }
 
   .header-left h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     line-height: 1.2;
   }
 
   .header-left .credentials {
     color: var(--color-secondary);
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    margin-bottom: 8px;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
     display: block;
   }
 
   .header-left .role {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--color-muted-foreground);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     display: block;
-    line-height: 1.4;
+    line-height: 1.3;
   }
 
-  .header-contact { display: flex; flex-wrap: wrap; gap: 12px; font-size: 8.5px; color: var(--color-muted-foreground); margin-top: 8px; }
-  .contact-item { display: flex; align-items: center; gap: 6px; }
+  .header-contact { display: flex; flex-wrap: wrap; gap: 10px; font-size: 8px; color: var(--color-muted-foreground); margin-top: 6px; }
+  .contact-item { display: flex; align-items: center; gap: 5px; }
 
-  .header-right { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .logo-img { width: 70px; height: auto; border-radius: 10px; border: 1px solid var(--color-border); }
-  .tagline { font-size: 8.5px; color: var(--color-muted-foreground); font-style: italic; line-height: 1.4; }
+  .header-right { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .logo-img { width: 60px; height: auto; border-radius: 8px; border: 1px solid var(--color-border); }
+  .tagline { font-size: 8px; color: var(--color-muted-foreground); font-style: italic; line-height: 1.3; }
 
   /* ============ SECTIONS ============ */
-  .section { margin-bottom: 22px; }
+  .section { margin-bottom: 14px; }
 
   .section-title {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 6px;
-    margin-bottom: 14px;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .section-title .count {
-    font-size: 8px;
+    font-size: 7.5px;
     background: var(--color-primary);
     color: #000000;
-    padding: 2px 8px;
-    border-radius: 10px;
+    padding: 1px 6px;
+    border-radius: 8px;
     font-weight: 700;
   }
 
@@ -189,11 +189,11 @@
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 18px 22px;
+    padding: 12px 16px;
     margin-bottom: 4px;
   }
 
-  .summary-box p { font-size: 9.5px; color: var(--color-muted-foreground); line-height: 1.7; margin: 0; }
+  .summary-box p { font-size: 8.5px; color: var(--color-muted-foreground); line-height: 1.5; margin: 0; }
   .summary-box .highlight { color: var(--color-foreground); font-weight: 600; }
 
   /* ============ EXPERIENCE ============ */
@@ -203,60 +203,60 @@
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 16px 20px;
+    padding: 12px 16px;
     margin-bottom: 4px;
     page-break-inside: avoid;
   }
 
-  .exp-card h3 { font-size: 11px; font-weight: 600; color: var(--color-foreground); margin-bottom: 4px; }
-  .exp-card .meta { font-size: 8px; color: var(--color-primary); font-family: var(--font-mono); margin-bottom: 6px; font-weight: 600; }
-  .exp-card p { font-size: 9px; color: var(--color-muted-foreground); margin: 0 0 7px 0; line-height: 1.6; }
-  .exp-card ul { margin: 0 0 0 16px; padding: 0; }
-  .exp-card li { font-size: 9px; color: var(--color-muted-foreground); margin-bottom: 4px; list-style: none; padding-left: 12px; position: relative; line-height: 1.5; }
-  .exp-card li::before { content: "▸"; color: var(--color-primary); position: absolute; left: 0; font-size: 8px; top: 1px; }
+  .exp-card h3 { font-size: 10px; font-weight: 600; color: var(--color-foreground); margin-bottom: 3px; }
+  .exp-card .meta { font-size: 7.5px; color: var(--color-primary); font-family: var(--font-mono); margin-bottom: 4px; font-weight: 600; }
+  .exp-card p { font-size: 8.5px; color: var(--color-muted-foreground); margin: 0 0 5px 0; line-height: 1.5; }
+  .exp-card ul { margin: 0 0 0 14px; padding: 0; }
+  .exp-card li { font-size: 8.5px; color: var(--color-muted-foreground); margin-bottom: 3px; list-style: none; padding-left: 11px; position: relative; line-height: 1.4; }
+  .exp-card li::before { content: "▸"; color: var(--color-primary); position: absolute; left: 0; font-size: 7px; top: 1px; }
 
   /* ============ CLINICIAN EXPERTISE ============ */
-  .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 4px; }
+  .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 4px; }
 
   .expertise-card {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 18px 22px;
+    padding: 14px 18px;
     page-break-inside: avoid;
   }
 
   .expertise-card h3 {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: var(--color-foreground);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
-  .expertise-card h3 .icon { color: var(--color-primary); font-size: 13px; }
+  .expertise-card h3 .icon { color: var(--color-primary); font-size: 12px; }
 
-  .expertise-card p { font-size: 9px; color: var(--color-muted-foreground); margin-bottom: 8px; line-height: 1.6; }
-  .expertise-card ul { margin: 0; padding: 0 0 0 16px; }
-  .expertise-card li { font-size: 9px; color: var(--color-muted-foreground); margin-bottom: 5px; list-style: none; padding-left: 12px; position: relative; line-height: 1.5; }
-  .expertise-card li::before { content: "✓"; color: var(--color-accent); position: absolute; left: 0; font-size: 9px; font-weight: 700; top: 1px; }
+  .expertise-card p { font-size: 8.5px; color: var(--color-muted-foreground); margin-bottom: 6px; line-height: 1.5; }
+  .expertise-card ul { margin: 0; padding: 0 0 0 14px; }
+  .expertise-card li { font-size: 8.5px; color: var(--color-muted-foreground); margin-bottom: 4px; list-style: none; padding-left: 11px; position: relative; line-height: 1.4; }
+  .expertise-card li::before { content: "✓"; color: var(--color-accent); position: absolute; left: 0; font-size: 8px; font-weight: 700; top: 1px; }
 
   /* ============ SKILLS ============ */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
     margin-bottom: 4px;
   }
 
   .skill-tag {
-    font-size: 8px;
+    font-size: 7.5px;
     background: var(--color-muted);
     border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 7px 10px;
+    border-radius: 7px;
+    padding: 6px 8px;
     color: var(--color-muted-foreground);
     text-align: center;
     font-weight: 500;
@@ -264,19 +264,19 @@
   }
 
   /* ============ RESEARCH / PUBLICATIONS ============ */
-  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 4px; }
+  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 4px; }
 
   .research-card {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 16px 20px;
+    padding: 14px 16px;
     page-break-inside: avoid;
   }
 
-  .research-card h3 { font-size: 10px; font-weight: 600; color: var(--color-foreground); margin-bottom: 4px; line-height: 1.3; }
-  .research-card .meta { font-size: 7.5px; color: var(--color-primary); font-family: var(--font-mono); margin-bottom: 5px; font-weight: 600; }
-  .research-card p { font-size: 8.5px; color: var(--color-muted-foreground); margin: 0 0 5px 0; line-height: 1.5; }
+  .research-card h3 { font-size: 9.5px; font-weight: 600; color: var(--color-foreground); margin-bottom: 3px; line-height: 1.3; }
+  .research-card .meta { font-size: 7px; color: var(--color-primary); font-family: var(--font-mono); margin-bottom: 4px; font-weight: 600; }
+  .research-card p { font-size: 8px; color: var(--color-muted-foreground); margin: 0 0 4px 0; line-height: 1.45; }
   .research-card a { color: var(--color-secondary); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .research-card a:hover { color: var(--color-primary); }
 
@@ -284,7 +284,7 @@
   .project-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 14px;
     margin-bottom: 4px;
   }
 
@@ -302,13 +302,13 @@
   .project-thumb {
     background: var(--color-muted);
     border-bottom: 1px solid var(--color-border);
-    padding: 14px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: visible;
     aspect-ratio: 4 / 3;
-    max-height: 200px;
+    max-height: 150px;
   }
 
   .project-thumb img {
@@ -317,39 +317,39 @@
     object-fit: contain;
     object-position: center;
     opacity: 0.95;
-    border-radius: 6px;
+    border-radius: 5px;
   }
 
-  .project-body { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; }
-  .project-tags { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
-  .tag { font-size: 7px; padding: 3px 8px; border-radius: 5px; background: var(--color-muted); border: 1px solid var(--color-border); color: var(--color-muted-foreground); }
+  .project-body { padding: 12px 16px; flex: 1; display: flex; flex-direction: column; }
+  .project-tags { display: flex; gap: 6px; margin-bottom: 7px; flex-wrap: wrap; }
+  .tag { font-size: 6.5px; padding: 2px 6px; border-radius: 4px; background: var(--color-muted); border: 1px solid var(--color-border); color: var(--color-muted-foreground); }
 
-  .project-card h3 { margin-bottom: 6px; font-size: 10px; color: var(--color-foreground); }
-  .project-card p { font-size: 8.5px; color: var(--color-muted-foreground); margin: 0; line-height: 1.55; }
+  .project-card h3 { margin-bottom: 5px; font-size: 9.5px; color: var(--color-foreground); }
+  .project-card p { font-size: 8px; color: var(--color-muted-foreground); margin: 0; line-height: 1.5; }
 
   /* ============ STATS ============ */
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 4px; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 4px; }
   .stat-card {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 16px 14px;
+    padding: 12px 10px;
     text-align: center;
     page-break-inside: avoid;
   }
-  .stat-card .num { font-family: var(--font-mono); font-size: 18px; font-weight: 700; color: var(--color-primary); display: block; margin-bottom: 4px; }
-  .stat-card .lbl { font-size: 7.5px; color: var(--color-muted-foreground); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.3; }
+  .stat-card .num { font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: var(--color-primary); display: block; margin-bottom: 3px; }
+  .stat-card .lbl { font-size: 7px; color: var(--color-muted-foreground); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2; }
 
   /* ============ FOOTER ============ */
   .footer-note {
-    font-size: 7.5px;
+    font-size: 7px;
     color: var(--color-muted-foreground);
     font-style: italic;
     border-top: 1px solid var(--color-border);
-    padding-top: 12px;
-    margin-top: 6px;
+    padding-top: 10px;
+    margin-top: 4px;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   /* Responsive */
