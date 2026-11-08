@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Harkaran Singh Mann — Professional Portfolio | Radiologist + AI Engineer</title>
+<style>
+  /* ============ PRINT PORTFOLIO — A4 MULTIPAGE ============ */
+  :root {
+    --bg: #0b0f19;
+    --surface: #131a2b;
+    --surface-2: #1c253a;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #38bdf8;
+    --accent: #22c55e;
+    --border: #26344f;
+    --radius: 10px;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm 16mm;
+    @bottom-left {
+      content: "Dr. Harkaran Singh Mann — M.D. Radiodiagnosis · MBBS";
+      font-family: var(--font-sans);
+      font-size: 7px;
+      color: var(--text-muted);
+    }
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: var(--font-sans);
+      font-size: 7px;
+      color: var(--text-muted);
+    }
+    @top-right {
+      content: "Professional Portfolio";
+      font-family: var(--font-sans);
+      font-size: 7px;
+      color: var(--text-muted);
+    }
+  }
+
+  /* Screen view — clean but print-optimized */
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    font-size: 10px;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  a { color: var(--primary); text-decoration: none; }
+  a.print-only { color: inherit; text-decoration: none; }
+
+  .no-print { display: none; }
+
+  /* Hide print-only elements on screen, show when printing */
+  @media print {
+    body { background: #ffffff; color: #000000; font-size: 9.5px; }
+    a { color: #000000; text-decoration: none; }
+    .page-break { page-break-before: always; }
+    .avoid-break { page-break-inside: avoid; }
+    .header-band { background: #0b0f19 !important; color: #ffffff !important; }
+    .chip { border-color: #666 !important; color: #000 !important; background: #f5f5f7 !important; }
+    .stat-card { border-color: #666 !important; background: #f5f5f7 !important; color: #000 !important; }
+    .project-card { border-color: #666 !important; background: #f5f5f7 !important; color: #000 !important; }
+    .skill-tag { border-color: #666 !important; background: #f5f5f7 !important; color: #000 !important; }
+  }
+
+  /* ============ HEADER ============ */
+  .header-band {
+    background: linear-gradient(135deg, var(--bg) 0%, #16213e 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  .header-grid { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: flex-start; }
+
+  .header-left h1 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .header-left .credentials {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .header-left .role {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .header-contact { display: flex; flex-wrap: wrap; gap: 10px; font-size: 8.5px; color: var(--text-muted); }
+  .contact-item { display: flex; align-items: center; gap: 6px; }
+
+  .header-right { text-align: right; }
+  .logo-img { width: 70px; height: auto; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 8px; }
+  .tagline { font-size: 9px; color: var(--text-muted); font-style: italic; max-width: 200px; }
+
+  /* ============ SECTIONS ============ */
+  .section { margin-bottom: 16px; }
+
+  .section-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title .count {
+    font-size: 8px;
+    background: var(--primary);
+    color: #00141f;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  /* ============ SUMMARY ============ */
+  .summary-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 4px;
+  }
+
+  .summary-box p { font-size: 9px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+  .summary-box .highlight { color: var(--text); font-weight: 600; }
+
+  /* ============ EXPERIENCE ============ */
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 4px;
+    page-break-inside: avoid;
+  }
+
+  .exp-card h3 { font-size: 10px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .exp-card .meta { font-size: 7.5px; color: var(--primary); font-family: var(--font-mono); margin-bottom: 5px; font-weight: 600; }
+  .exp-card p { font-size: 8.5px; color: var(--text-muted); margin: 0 0 6px 0; line-height: 1.5; }
+  .exp-card ul { margin: 0 0 0 14px; padding: 0; }
+  .exp-card li { font-size: 8.5px; color: var(--text-muted); margin-bottom: 3px; list-style: none; padding-left: 10px; position: relative; }
+  .exp-card li::before { content: "▸"; color: var(--primary); position: absolute; left: 0; font-size: 7px; top: 1px; }
+
+  /* ============ CLINICIAN EXPERTISE (NEW) ============ */
+  .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 4px; }
+
+  .expertise-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    page-break-inside: avoid;
+  }
+
+  .expertise-card h3 {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .expertise-card h3 .icon { color: var(--primary); font-size: 11px; }
+
+  .expertise-card p { font-size: 8.5px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.5; }
+  .expertise-card ul { margin: 0; padding: 0 0 0 14px; }
+  .expertise-card li { font-size: 8.5px; color: var(--text-muted); margin-bottom: 4px; list-style: none; padding-left: 10px; position: relative; }
+  .expertise-card li::before { content: "✓"; color: var(--accent); position: absolute; left: 0; font-size: 8px; font-weight: 700; top: 1px; }
+
+  /* ============ SKILLS ============ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 7px;
+    margin-bottom: 4px;
+  }
+
+  .skill-tag {
+    font-size: 7.5px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 8px;
+    color: var(--text-muted);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* ============ PROJECTS ============ */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    page-break-inside: avoid;
+    margin-bottom: 4px;
+  }
+
+  .project-thumb {
+    height: 75px;
+    background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+
+  .project-body { padding: 12px 14px; }
+  .project-tags { display: flex; gap: 6px; margin-bottom: 7px; flex-wrap: wrap; }
+  .tag { font-size: 6.5px; padding: 2px 6px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted); }
+
+  .project-card h3 { margin-bottom: 4px; font-size: 9px; color: var(--text); }
+  .project-card p { font-size: 8px; color: var(--text-muted); margin: 0; line-height: 1.4; }
+
+  /* ============ STATS ============ */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 4px; }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 12px;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  .stat-card .num { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--primary); display: block; margin-bottom: 3px; }
+  .stat-card .lbl { font-size: 7px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ============ FOOTER ============ */
+  .footer-note {
+    font-size: 7.5px;
+    color: var(--text-muted);
+    font-style: italic;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  /* ============ UTILITIES ============ */
+  .text-center { text-align: center; }
+  .mt-6 { margin-top: 6px; }
+
+  /* Responsive for screen view — stack columns */
+  @media (max-width: 768px) {
+    .exp-grid, .expertise-grid, .project-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Print-specific overrides for better A4 output */
+  @media print {
+    .header-band { background: #0b0f19 !important; color: #ffffff !important; -webkit-print-color-adjust: exact; }
+    .header-left .credentials { color: #38bdf8 !important; -webkit-print-color-adjust: exact; }
+    .section-title { color: #38bdf8 !important; border-bottom-color: #38bdf8 !important; -webkit-print-color-adjust: exact; }
+    .count { background: #38bdf8 !important; color: #00141f !important; -webkit-print-color-adjust: exact; }
+    .stat-card .num { color: #38bdf8 !important; -webkit-print-color-adjust: exact; }
+    .exp-card li::before { color: #38bdf8 !important; -webkit-print-color-adjust: exact; }
+    .expertise-card li::before { color: #22c55e !important; -webkit-print-color-adjust: exact; }
+    .chip { border-color: #666 !important; color: #000 !important; background: #f0f0f0 !important; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ PAGE 1 — HEADER + SUMMARY + EXPERIENCE ============ -->
+  <div class="header-band">
+    <div class="header-grid">
+      <div class="header-left">
+        <span class="credentials">M.D. Radiodiagnosis · MBBS · Consultant Radiologist · AI Engineer</span>
+        <h1>Dr. Harkaran Singh Mann</h1>
+        <span class="role">12+ Years Clinical Experience · Expert in Cross-Sectional Imaging · Foetal Medicine & Foetal Echo</span>
+        <div class="header-contact">
+          <div class="contact-item">📍 Jalandhar, Punjab, India</div>
+          <div class="contact-item">✉️ harkaran@msn.com</div>
+          <div class="contact-item">🌐 harkaranmann.mannscan.in</div>
+          <div class="contact-item">📷 instagram.com/harkaranmann</div>
+          <div class="contact-item">▶️ youtube.com/@Dreamdoorkids</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <img src="images/logo.png" alt="Mann Scanning Centre" class="logo-img">
+        <div class="tagline">Mann Scanning Centre · NABH-Accredited · Jalandhar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary-box">
+      <p><span class="highlight">Consultant Radiologist (M.D. Radiodiagnosis, MBBS from Government Medical College, Amritsar)</span> with <strong>12+ years of clinical experience</strong> at Mann Scanning Centre, a NABH-accredited imaging centre in Jalandhar, Punjab. Expert in <strong>cross-sectional imaging (MRI, CT, Ultrasound)</strong>, <strong>foetal medicine</strong>, and <strong>foetal echocardiography</strong>. Self-built AI/software engineer developing clinical AI software, health-education video automation, DICOM viewers, and AI digital-twin production pipelines. Dual-domain fluency in medicine + AI enables delivery of tools clinicians use and content patients watch.</p>
+    </div>
+  </div>
+
+  <div class="section page-break">
+    <div class="section-title">Clinical Experience (12+ Years)</div>
+    <div class="exp-grid">
+      <div class="exp-card avoid-break">
+        <h3>Consultant Radiologist</h3>
+        <div class="meta">Mann Scanning Centre · Jalandhar, Punjab · Full-time · 12+ Years</div>
+        <p>Reporting MRI, CT, 4D Ultrasound (GE Voluson), DEXA, and FibroTouch elastography studies at a NABH-accredited diagnostic imaging centre. Daily clinical reporting across multiple imaging modalities with direct patient contact and quality oversight.</p>
+        <ul>
+          <li><strong>12+ years</strong> of diagnostic radiology practice</li>
+          <li>Expert in cross-sectional imaging interpretation (MRI, CT, Ultrasound)</li>
+          <li>Specialist in foetal medicine and foetal echocardiography</li>
+          <li>NABH-accredited centre operations and quality assurance</li>
+          <li>Clinical oversight for AI-assisted reporting tools</li>
+        </ul>
+      </div>
+
+      <div class="exp-card avoid-break">
+        <h3>AI / Software Engineer — Independent Studio</h3>
+        <div class="meta">Remote · Ongoing</div>
+        <p>Builds clinical AI software, health-education video automation, and freelance digital products. Serves clinics, scanning centres, health creators, and trading firms as a solo studio.</p>
+        <ul>
+          <li>Built <strong>FibroAI</strong> — AI-assisted elastography reporting in 10 languages</li>
+          <li>Built <strong>AnubiS AI Denoise</strong> — MRI denoising inside PACS workflow</li>
+          <li>Built <strong>Radiology AI Reporting</strong> — Voice-first Whisper dictation system</li>
+          <li>Built <strong>Foetal Medicine Reports</strong> — Ultrasound biometry + INTERGROWTH-21st charts</li>
+          <li>Built <strong>AnubiS DICOM Viewer</strong> — Web DICOM viewing (OHIF/Cornerstone3D)</li>
+          <li>Built <strong>NSE Paper-Trading Dashboard</strong> — Opening-range scanner for Indian markets</li>
+          <li>AI digital-twin health-education reel factory — voice clone + talking heads</li>
+        </ul>
+      </div>
+
+      <div class="exp-card avoid-break">
+        <h3>Health-Education Video Producer</h3>
+        <div class="meta">@harkaranmann · Instagram · Ongoing</div>
+        <p>Producer of evidence-led health-education short-form video using an AI digital-twin factory: voice clone, AI talking-head, kinetic captions, SFX placement.</p>
+        <ul>
+          <li>20+ published reels on pregnancy, BP, liver, bone density, lifting-after-40</li>
+          <li>Evidence-first format: hook → evidence card → explainer → CTA</li>
+          <li>Multilingual: Hindi, Punjabi, English variants</li>
+        </ul>
+      </div>
+
+      <div class="exp-card avoid-break">
+        <h3>Author — Medical & Creative Writing</h3>
+        <div class="meta">As Dr. H.S. Mann · Ongoing</div>
+        <p>Published science-fiction and children's books across Amazon and Goodreads.</p>
+        <ul>
+          <li>Andromeda's Last Light — sci-fi novel (2nd edition)</li>
+          <li>Exile of the Katani — Mossania tales</li>
+          <li>Squeakey and Owiee — children's book series</li>
+          <li>The Chef's Daughters: Lovely and Salty — illustrated children's book</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 2 — CLINICIAN EXPERTISE ============ -->
+  <div class="section page-break">
+    <div class="section-title">Clinician Expertise</div>
+    <div class="expertise-grid">
+      <div class="expertise-card avoid-break">
+        <h3><span class="icon">🩻</span>Cross-Sectional Imaging</h3>
+        <p>Expert-level interpretation and reporting of cross-sectional imaging modalities used daily in diagnostic practice at Mann Scanning Centre.</p>
+        <ul>
+          <li><strong>MRI</strong> — Neurological, musculoskeletal, abdominal, and pelvic studies</li>
+          <li><strong>CT</strong> — Emergency trauma, neuro, chest, abdomen, and oncology imaging</li>
+          <li><strong>4D Ultrasound</strong> — GE Voluson platform, real-time volumetric imaging</li>
+          <li><strong>DEXA</strong> — Bone density assessment and body composition</li>
+          <li><strong>FibroTouch Elastography</strong> — Liver fibrosis assessment</li>
+          <li>Quality assurance and reporting protocols for NABH accreditation</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card avoid-break">
+        <h3><span class="icon">👶</span>Foetal Medicine</h3>
+        <p>Specialist in prenatal imaging, foetal biometry, growth assessment, and risk stratification using INTERGROWTH-21st standards.</p>
+        <ul>
+          <li>Foetal biometry — BPD, HC, AC, FL measurements</li>
+          <li>INTERGROWTH-21st growth charts and percentile assessment</li>
+          <li>Foetal anatomy survey and anomaly screening</li>
+          <li>Growth restriction and macrosomia evaluation</li>
+          <li>DICOM import and structured PDF reporting</li>
+          <li>Risk assessment and clinical correlation</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card avoid-break">
+        <h3><span class="icon">❤️</span>Foetal Echocardiography</h3>
+        <p>Expert in foetal cardiac imaging — structural assessment, flow evaluation, and congenital heart disease screening on 4D ultrasound platforms.</p>
+        <ul>
+          <li>Four-chamber view and outflow tract assessment</li>
+          <li>Foetal heart rate and rhythm evaluation</li>
+          <li>Congenital heart defect screening (CHD)</li>
+          <li>4D/5D foetal cardiac visualization (GE Voluson)</li>
+          <li>Structural vs functional cardiac assessment</li>
+          <li>Referral and multidisciplinary coordination</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card avoid-break">
+        <h3><span class="icon">🏥</span>Clinical Leadership</h3>
+        <p>Operations and quality oversight at a NABH-accredited imaging centre serving Jalandhar and surrounding Punjab region.</p>
+        <ul>
+          <li>NABH accreditation compliance and quality audits</li>
+          <li>PACS workflow optimization and AI integration</li>
+          <li>Cross-modality correlation and second-opinion review</li>
+          <li>Training and mentoring of junior radiologists and technicians</li>
+          <li>Patient communication and informed consent protocols</li>
+          <li>Clinical audit and continuous quality improvement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 3 — SKILLS + PROJECTS ============ -->
+  <div class="section page-break">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-tag">M.D. Radiodiagnosis</div>
+      <div class="skill-tag">MBBS — GMC Amritsar</div>
+      <div class="skill-tag">MRI · CT · 4D Ultrasound</div>
+      <div class="skill-tag">DEXA · FibroTouch Elastography</div>
+      <div class="skill-tag">Foetal Medicine · Foetal Echo</div>
+      <div class="skill-tag">DICOM · PACS · Orthanc</div>
+      <div class="skill-tag">OHIF · Cornerstone3D</div>
+      <div class="skill-tag">Python · FastAPI · SQL</div>
+      <div class="skill-tag">PyTorch / MONAI</div>
+      <div class="skill-tag">Voice Cloning · TTS (48 kHz)</div>
+      <div class="skill-tag">Remotion · AI Video Automation</div>
+      <div class="skill-tag">Medical Voiceover (HI · EN · Punjabi)</div>
+      <div class="skill-tag">NSE Trading · Paper Systems</div>
+      <div class="skill-tag">Clinical Web Tools · PDF Reports</div>
+      <div class="skill-tag">Git · Linux · Cloud Deploy</div>
+    </div>
+  </div>
+
+  <div class="section page-break">
+    <div class="section-title">Selected Projects</div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-thumb">
+          <img src="shots/denoise.webp" alt="MRI denoising result">
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">MONAI</span><span class="tag">Orthanc</span></div>
+          <h3>AnubiS AI Denoise</h3>
+          <p>MRI denoising and 2x in-plane interpolation inside PACS workflow. Quality gate passed on 18/18 real MR series (median SNR gain +8.8 dB).</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <img src="shots/fibroai.webp" alt="FibroAI landing page">
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">Oracle Cloud</span><span class="tag">Groq</span></div>
+          <h3>FibroAI</h3>
+          <p>AI-assisted elastography reporting in 10 languages. Structured PDF reports with clinician-led review. Live in production at fibroai.com.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <img src="shots/radiology.webp" alt="Radiology AI Reporting interface">
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">Whisper</span><span class="tag">FAISS</span></div>
+          <h3>Radiology AI Reporting</h3>
+          <p>Voice-first reporting: Whisper dictation into findings pad, rule-based section mapping, cloud second opinion, offline FAISS template path.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <img src="shots/foetal.webp" alt="Foetal medicine report interface">
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">DICOM</span><span class="tag">INTERGROWTH-21st</span></div>
+          <h3>Foetal Medicine Reports</h3>
+          <p>Ultrasound biometry entry, INTERGROWTH-21st growth charts, risk assessment, DICOM/machine import, PDF narrative reports.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <img src="shots/openmontage.webp" alt="OpenMontage video system">
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="tag">Python</span><span class="tag">Remotion</span><span class="tag">Agent Pipelines</span></div>
+          <h3>OpenMontage</h3>
+          <p>Agentic video-production system: 12 pipelines, 52 tools, script-to-MP4 automation for explainers, animations, and cinematic edits.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <img src="shots/trading.webp" alt="NSE trading dashboard">
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="tag">Python</span><span class="tag">NSE</span><span class="tag">Dashboard</span></div>
+          <h3>NSE Paper-Trading Dashboard</h3>
+          <p>Opening-range scanner, risk-first position sizing, stop-loss rules, Indian market news integration. Paper simulation only.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 4 — STATS + CONTACT ============ -->
+  <div class="section page-break">
+    <div class="section-title">Practice at a Glance</div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="num">12+</span>
+        <span class="lbl">Years Clinical Experience</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">3</span>
+        <span class="lbl">Core Modalities (MRI · CT · US)</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">10+</span>
+        <span class="lang">Languages (FibroAI Voice)</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">20+</span>
+        <span class="lbl">Health-Education Reels Published</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section page-break">
+    <div class="section-title">Contact & Availability</div>
+    <div class="summary-box">
+      <p style="font-size: 9.5px; color: var(--text); margin-bottom: 8px;"><span class="highlight">Available for remote freelance work.</span></p>
+      <p style="font-size: 9px; color: var(--text-muted); margin: 0;">
+        <strong>Services:</strong> Health-education reels · Medical voiceover (HI/EN/Punjabi) · Clinical web tools (DICOM/FastAPI) · NSE trading dashboards · AI video automation · Kids' content animation<br>
+        <strong>Website:</strong> <a class="print-only">https://harkaranmann.mannscan.in</a> | <strong>Resume:</strong> <a class="print-only">https://harkaranmann.mannscan.in/resume.html</a><br>
+        <strong>Email:</strong> harkaran@msn.com | <strong>Instagram:</strong> instagram.com/harkaranmann | <strong>YouTube:</strong> youtube.com/@Dreamdoorkids<br>
+        <strong>Location:</strong> Jalandhar, Punjab, India (IST · Remote-friendly)
+      </p>
+    </div>
+    <div class="footer-note">
+      Health-education content is general information only — not medical advice. Does not replace examination or advice from your own doctor.<br>
+      Paper-trading dashboard is a simulation only — no live broker, no real funds, not investment advice.<br>
+      © 2026 Dr. Harkaran Singh Mann · Mann Scanning Centre, Jalandhar
+    </div>
+  </div>
+
+</body>
+</html>
