@@ -644,8 +644,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 650; letter-spacing: -.032em; line-height:
 .chrome {
   background: var(--chrome);
   background-size: 250% 100%;
-  -webkit-background-clip: text; background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--text);
+  -webkit-text-fill-color: transparent;
   animation: sheen 9s var(--ease) infinite;
 }
 @keyframes sheen { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
